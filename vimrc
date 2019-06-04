@@ -174,3 +174,32 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" Normal Mode Mappings
+" Map Ctrl-s to write the file
+nmap <C-s> :w<cr>
+
+" Insert Mode Mappings
+" Exit insert mode and save the buffer
+imap <C-s> <esc>:w<cr>
+
+" Leader Mappings
+" Split edit vimrc. Type space, v, r in sequence
+nmap <leader>vr :sp $MYVIMRC<cr>
+" Souce (reload) vimrc
+nmap <leader>so :source $MYVIMRC<cr>
+" Pre-populate a split command with the current directory
+nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), ' ') . '/'<cr>
+" Edit vimrc in a new tab
+nmap <leader>vi :tabedit ~/.vimrc<cr>
+" Copy the entire buffer into the system register
+nmap <leader>co ggVG*y
+" Edit the db/schema.rb Rails file in a split
+nmap <leader>sc :split db/schema.rb<cr>
+" Move up and down by visible lines if current line is wrapped
+nmap j gj
+nmap k gk
+
+" Autocommands
+" Bind `q` to close the buffer for help files
+autocmd Filetype help nnoremap <buffer> q :q<CR>
