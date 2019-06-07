@@ -38,6 +38,12 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'thoughtbot/vim-rspec'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 if g:has_async
   Plug 'w0rp/ale'

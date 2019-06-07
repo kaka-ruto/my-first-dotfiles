@@ -10,6 +10,7 @@ set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitigno
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
+set hlsearch      " Highlight search results
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
@@ -108,6 +109,7 @@ set colorcolumn=+1
 " Numbers
 set number
 set numberwidth=5
+set scrolloff=5          " Leave 5 lines of buffer when scrolling
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -196,7 +198,30 @@ nmap <leader>vi :tabedit ~/.vimrc<cr>
 nmap <leader>co ggVG*y
 " Edit the db/schema.rb Rails file in a split
 nmap <leader>sc :split db/schema.rb<cr>
+" Toggle NerdTree
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+" Open NerdTree on the current file
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 " Autocommands
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
+
+" INTERFACE
+" set Vim-specific sequences for RGB colors
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark
+colorscheme solarized8_flat
+let g:airline_solarized_bg='dark'
+
+" NerdTree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
