@@ -39,3 +39,25 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+export GOPATH=$HOME/go
+export PATH=$PATH:$(go env GOPATH)/bin
+source /Users/kibe/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+# Plugins
+plugins=(
+  common-aliases
+  docker
+  dotenv
+  git
+  golang
+  heroku
+  rails
+  ruby
+  zsh-autosuggestions
+)
+
+source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+
+# Themes
+ZSH_THEME=agnoster
