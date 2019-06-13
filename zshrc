@@ -41,8 +41,16 @@ _load_settings "$HOME/.zsh/configs"
 [[ -f ~/.aliases ]] && source ~/.aliases
 export GOPATH=$HOME/go
 export PATH=$PATH:$(go env GOPATH)/bin
-source /Users/kibe/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+# Ruby and rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# oh-my-zsh
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Plugins
 plugins=(
