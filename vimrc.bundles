@@ -48,6 +48,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'jgdavey/tsline.vim'
 
 if g:has_async
   Plug 'w0rp/ale'
