@@ -138,12 +138,16 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-test mappings
+" VIM-TEST
+  " mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
 nnoremap <silent> <Leader>s :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
+  " make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<Space>
@@ -242,6 +246,3 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-
-" RSpec
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
