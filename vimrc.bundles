@@ -49,6 +49,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'posva/vim-vue'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mattn/emmet-vim'
 
 if g:has_async
   Plug 'w0rp/ale'
