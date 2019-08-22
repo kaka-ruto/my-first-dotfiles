@@ -69,3 +69,6 @@ source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
 # Themes
 ZSH_THEME=agnoster
+
+# Enable vi mode on the command line
+bindkey -v
