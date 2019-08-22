@@ -209,6 +209,8 @@ nmap <leader>sc :split db/schema.rb<cr>
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 " Open NerdTree on the current file
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+" Insert binding.pry below the cursor
+nmap <leader>bp orequire 'pry'; binding.pry<esc>^
 
 " Autocommands
 " Bind `q` to close the buffer for help files
